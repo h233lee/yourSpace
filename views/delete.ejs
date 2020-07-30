@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+
+
+<h1><%= postTitle %></h1>
+<p><%= postBody %></p>
+
+
+<div id="wrapper">
+    <label for="yes_no_radio">Are you sure you want to delete??</label>
+    <p>
+        <input type="radio" name="yes_no" checked>Yes</input>
+    </p>
+    <p>
+        <input type="radio" name="yes_no">No</input>
+    </p>
+</div>
+
+<%- include('partials/footer') %>

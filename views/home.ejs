@@ -1,0 +1,39 @@
+<%- include('partials/header') %>
+
+<h1>Home</h1>
+<p> <%= startingContent %> </p>
+
+<% posts.forEach(function(i){ %>
+
+<script>
+  function deleteMe(id) {
+    const response = window.confirm("Are you sure you want to delete?")
+
+    if (response){
+      console.log(id)
+      window.location.href = 'delete/'+id
+    }
+    
+  }
+</script>
+
+
+<div id='title'>
+  <h1> <%= i.title %> </h1>
+  <button id="<%= i.id %>" class="button glyphicon glyphicon-trash" onClick=<%= deleteHandler %> ></button>
+</div>
+
+
+
+
+
+<p>
+  <%= i.body.substr(0,100) + "..."%>
+  <a href="posts/<%= i._id %>">Read More</a>
+</p>
+
+<% }); %>
+
+
+
+<%- include('partials/footer') %>
