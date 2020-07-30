@@ -60,3 +60,7 @@ h1{
 #title{
     display:inline-block;
 }
+
+div {
+    word-wrap: break-word;
+  }

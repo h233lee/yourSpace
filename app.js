@@ -1,10 +1,11 @@
 //jshint esversion:6
-
+require('dotenv').config()
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mongoose = require("mongoose")
+
 
 const homeStartingContent = "This blog website allows anyone to publicly upload to the website.";
 const aboutContent = "This app leverages Node.js and MongoDB.";
@@ -20,10 +21,10 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
-const PORT = process.env.port || 3000
+const PORT = process.env.PORT || 3000
 ////////////////////////////////////////////////////////////////////////////////
 
-mongoose.connect("mongodb://localhost:27017/blogwebsiteDB", {
+mongoose.connect(`mongodb+srv://admin-andrew:${process.env.DB_PASS}@cluster0.7gdn9.mongodb.net/blogwebsiteDB`, {
   useNewUrlParser: true,
   useUnifiedTopology: true 
 });
