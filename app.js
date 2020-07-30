@@ -21,7 +21,7 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.port || 3000
 ////////////////////////////////////////////////////////////////////////////////
 
 mongoose.connect(`mongodb+srv://admin-andrew:${process.env.DB_PASS}@cluster0.7gdn9.mongodb.net/blogwebsiteDB`, {
