@@ -21,7 +21,10 @@ app.use(bodyParser.urlencoded({
 app.use(express.static("public"));
 
 
-const PORT = process.env.port || 3000
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
 ////////////////////////////////////////////////////////////////////////////////
 
 mongoose.connect(`mongodb+srv://admin-andrew:${process.env.DB_PASS}@cluster0.7gdn9.mongodb.net/blogwebsiteDB`, {
@@ -106,6 +109,6 @@ app.get("/delete/:postID", function(req, res) {
 
 
 
-app.listen(PORT, function() {
-  console.log(`Server started on port: ${PORT}`);
+app.listen(port, function() {
+  console.log(`Server started on port: ${port}`);
 });
