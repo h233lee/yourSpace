@@ -7,7 +7,7 @@ const _ = require("lodash");
 const mongoose = require("mongoose")
 
 
-const homeStartingContent = "This blog website allows anyone to publicly upload to the website.";
+const homeStartingContent = "This blog space allows anyone to publicly upload to the website.";
 const aboutContent = "This app leverages Node.js and MongoDB.";
 const contactContent = "Check out the GitHub repository for this app";
 
